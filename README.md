@@ -1,8 +1,8 @@
-﻿\# Limpeza de dados: preços de combustíveis no RS (1º semestre de 2026)
+# Limpeza de dados: preços de combustíveis no RS﻿
 
 Projeto de limpeza e padronização de dados públicos da ANP, feito em Python com pandas. O objetivo foi pegar um arquivo nacional grande, recortar o Rio Grande do Sul e entregar tabelas prontas para análise.
 
-\## Fonte dos dados
+## Fonte dos dados
 
 Série Histórica de Preços de Combustíveis e de GLP, publicada pela ANP no Portal de Dados Abertos. Arquivo usado: Combustíveis Automotivos, 1º semestre de 2026 (atualizado em 03/07/2026).
 
@@ -10,7 +10,7 @@ Link: https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-co
 
 O arquivo original não está no repositório por causa do tamanho. Para rodar o notebook, baixe o CSV no link acima e coloque dentro de uma pasta chamada `dados-originais`.
 
-\## Problemas encontrados
+## Problemas encontrados
 
 - O arquivo tinha 422.418 linhas e 16 colunas, cobrindo o país inteiro. Recortei o RS, que ficou com 31.015 linhas.
 - A coluna `Valor de Compra` estava 100% vazia.
@@ -20,7 +20,7 @@ O arquivo original não está no repositório por causa do tamanho. Para rodar o
 - Havia 6 linhas duplicadas exatas (mesmo posto, produto, data e preço).
 - O GNV é vendido em R$/m³ e os demais combustíveis em R$/litro, então misturá-los distorceria qualquer média de preço.
 
-\## O que foi feito
+## O que foi feito
 
 - Filtrei o estado do RS.
 - Padronizei os nomes das colunas (minúsculas, sem espaços e sem traços).
@@ -32,7 +32,7 @@ O arquivo original não está no repositório por causa do tamanho. Para rodar o
 - Verifiquei maiúsculas, espaços e grafias em município, revenda, bandeira, produto e rua. O texto já vinha padronizado, então não alterei.
 - Conferi os preços por produto e não encontrei valores impossíveis.
 
-\## O que mudou
+## O que mudou
 
 | Item | Antes | Depois |
 
@@ -50,18 +50,18 @@ O arquivo original não está no repositório por causa do tamanho. Para rodar o
 
 | Data | texto | data (02/01/2026 a 30/06/2026) |
 
-\## Arquivos
+## Arquivos
 
 - `limpeza\_combustiveis\_rs.ipynb`: notebook com todo o processo, do diagnóstico à exportação.
 - `dados-limpos/combustiveis\_liquidos\_rs\_2026\_01.csv` e `.xlsx`: gasolina, gasolina aditivada, etanol, diesel e diesel S10 no RS.
 - `dados-limpos/gnv\_rs\_2026\_01.csv`: GNV no RS, em R$/m³.
 
-\## Como rodar
+## Como rodar
 
 1. Baixe o CSV da fonte e coloque na pasta `dados-originais`.
 1. Abra o notebook a partir da pasta do projeto.
 1. Execute todas as células (Kernel, Restart Kernel and Run All Cells).
 
-\## Ferramentas
+## Ferramentas
 
 Python, pandas, Jupyter Notebook.
